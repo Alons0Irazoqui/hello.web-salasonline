@@ -478,7 +478,7 @@ textarea, input, select { font-family:var(--font); }
     right: -8%;
     width: 52%;
     height: 115%;
-    background: var(--gray-50);
+    background: #FCEAEA;
     clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
     z-index: 0;
 }
