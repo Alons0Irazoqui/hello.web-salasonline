@@ -1559,6 +1559,10 @@ textarea, input, select { font-family:var(--font); }
     .hero-ctas { justify-content:center; }
     .hero-stats { justify-content:center; }
     .hero-visual { display:none; }
+    .hero-shape {
+        width: 48%;
+        clip-path: polygon(42% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
     .espec-grid { grid-template-columns:1fr; }
     .cols-grid { grid-template-columns:repeat(2,1fr); }
     .benefits-grid { grid-template-columns:repeat(2,1fr); }
