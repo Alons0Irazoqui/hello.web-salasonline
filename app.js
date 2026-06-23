@@ -263,9 +263,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ═══════════════════════════════════════════
-       8. SOFA 3D (Three.js — hero only)
+       8. HERO PARALLAX — works on all browsers including iOS
     ═══════════════════════════════════════════ */
-    initSofa3D();
+    (function() {
+        const heroBg = document.querySelector('.hero-bg');
+        const heroEl = document.getElementById('hero');
+        if (!heroBg || !heroEl) return;
+        let ticking = false;
+        function onParallax() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const y = window.scrollY;
+                    if (y <= heroEl.offsetHeight + 200) {
+                        heroBg.style.transform = 'translateY(' + (y * 0.6) + 'px)';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        window.addEventListener('scroll', onParallax, { passive: true });
+    })();
+
+    // initSofa3D(); — removed: hero now uses background image
 
     /* ═══════════════════════════════════════════
        9. SECTION PARTICLES — white / gray
